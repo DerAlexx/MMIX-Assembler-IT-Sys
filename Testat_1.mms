@@ -8,16 +8,17 @@ x				IS $2
 y				IS $3 
 	
 	
-Main 	TRAP 0,MWait,0 
-			SET x,$255
-			SET	y,$255
-			SL x,x,32
-			SR x,x,48 
-			SL x,x,16
-			SETMH  $255,5  
-			ADD 	$255,$255,x			
-			SL y,y,48
-			SR y,y,48 
-			ADD $255,$255,y
-			TRAP	0,GPutBmp,0
-			JMP	Main
+Main 	JMP	2F
+
+1H		SWYM
+2H		SWYM
+		SET	$1,2
+		SET	$4,#20<<1
+		MUL	$0,$1,#20<<1
+		SWYM
+		SWYM
+		SET $0,2
+		SET	$1,2
+		SLU	$0,$1,6
+		SET	$5,#1<<10
+		SWYM
