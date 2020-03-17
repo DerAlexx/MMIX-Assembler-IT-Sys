@@ -26,4 +26,6 @@ Testat 10: Counter (Teil 2)
 
 Testat 11: FAT32
 
+Testat 12: FAT 32 Erweitert
+
 ```
